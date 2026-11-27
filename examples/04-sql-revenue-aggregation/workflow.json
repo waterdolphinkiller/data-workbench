@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "workflow": {
+    "id": "sql-revenue-aggregation",
+    "name": "Local SQL Plan Revenue Aggregation",
+    "engineVersion": "2.0.0",
+    "nodes": [
+      { "id": "input-1", "type": "source.csv", "version": "1.0.0", "params": { "header": true, "delimiter": "auto" } },
+      { "id": "dedupe-1", "type": "transform.deduplicate", "version": "1.0.0", "params": { "keys": ["customer_id"], "keep": "last" } },
+      { "id": "sql-1", "type": "transform.sqlQuery", "version": "1.0.0", "params": { "sql": "SELECT plan, COUNT(*) AS customers, SUM(monthly_spend) AS mrr FROM data WHERE status = 'active' GROUP BY plan ORDER BY mrr DESC" } },
+      { "id": "output-1", "type": "output.json", "version": "1.0.0", "params": { "pretty": true } }
+    ],
+    "edges": [
+      { "from": "input-1", "to": "dedupe-1" },
+      { "from": "dedupe-1", "to": "sql-1" },
+      { "from": "sql-1", "to": "output-1" }
+    ]
+  }
+}

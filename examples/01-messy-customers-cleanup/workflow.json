@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "workflow": {
+    "id": "messy-customers-cleanup",
+    "name": "Messy Customer CSV Cleanup",
+    "engineVersion": "2.0.0",
+    "nodes": [
+      { "id": "input-1", "type": "source.csv", "version": "1.0.0", "params": { "header": true, "delimiter": "auto" } },
+      { "id": "trim-1", "type": "clean.text", "version": "1.0.0", "params": { "columns": ["full_name", "email"], "trim": true, "normalizeNulls": true } },
+      { "id": "lower-email", "type": "clean.text", "version": "1.0.0", "params": { "columns": ["email"], "case": "lower" } },
+      { "id": "dedupe-1", "type": "transform.deduplicate", "version": "1.0.0", "params": { "keys": ["customer_id"], "keep": "last" } },
+      { "id": "date-1", "type": "clean.dateNormalize", "version": "1.0.0", "params": { "column": "signup_date", "sourceOrder": "MDY", "targetFormat": "ISO-8601", "invalidPolicy": "keep" } },
+      { "id": "profile-1", "type": "validate.qualityProfile", "version": "1.0.0", "params": {} },
+      { "id": "output-1", "type": "output.json", "version": "1.0.0", "params": { "pretty": true } }
+    ],
+    "edges": [
+      { "from": "input-1", "to": "trim-1" },
+      { "from": "trim-1", "to": "lower-email" },
+      { "from": "lower-email", "to": "dedupe-1" },
+      { "from": "dedupe-1", "to": "date-1" },
+      { "from": "date-1", "to": "profile-1" },
+      { "from": "profile-1", "to": "output-1" }
+    ]
+  }
+}

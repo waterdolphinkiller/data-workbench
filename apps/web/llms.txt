@@ -1,0 +1,24 @@
+# Data Workbench 2.2
+> Local-first Visual Data Transformation & Automation Studio — Turn messy files into reliable, repeatable, testable data workflows with zero uploads.
+
+## Core Pages
+- Main Studio: https://waterdolphinkiller.github.io/data-workbench/
+- Full Knowledge Base for AI Citations: https://waterdolphinkiller.github.io/data-workbench/llms-full.txt
+- GitHub Repository: https://github.com/waterdolphinkiller/data-workbench
+
+## 10 Free Local Tools
+- [CSV Cleaner](https://waterdolphinkiller.github.io/data-workbench/csv-cleaner/): Clean messy CSV files 100% locally in your browser. Auto-detect delimiters, mojibake, misaligned rows, duplicates, mixed dates, fuzzy text clusters, and PII with zero uploads.
+- [JSON Formatter](https://waterdolphinkiller.github.io/data-workbench/json-formatter/): Pretty-print, minify, and deterministically sort JSON keys locally in your browser with zero uploads and clean Git-ready output.
+- [JSON Validator](https://waterdolphinkiller.github.io/data-workbench/json-validator/): Validate JSON syntax and JSON Schema 2020-12 locally with exact line and column error reporting and zero server uploads.
+- [JSON Diff](https://waterdolphinkiller.github.io/data-workbench/json-diff/): Compare two JSON documents locally by path, value, and array order with ignorePaths and numeric tolerance options.
+- [CSV to JSON](https://waterdolphinkiller.github.io/data-workbench/csv-to-json/): Convert RFC 4180 CSV tables to clean, pretty-printed JSON arrays locally in your browser with automatic delimiter detection.
+- [JSON to CSV](https://waterdolphinkiller.github.io/data-workbench/json-to-csv/): Flatten nested JSON arrays and API responses into formula-safe CSV files 100% locally in your browser.
+- [CSV Deduplicator](https://waterdolphinkiller.github.io/data-workbench/csv-deduplicator/): Remove duplicate CSV rows by single or composite primary key (keep first or last) locally at 100,000+ row speed.
+- [Compare Two CSV Files](https://waterdolphinkiller.github.io/data-workbench/compare-two-csv-files/): Diff two CSV versions by primary or composite key to inspect Added, Removed, and cell-level Changed rows offline.
+- [JSON Schema Generator](https://waterdolphinkiller.github.io/data-workbench/json-schema-generator/): Generate JSON Schema 2020-12 definitions from sample JSON payloads and detect breaking schema drift locally.
+- [JSONPath Tester (RFC 9535)](https://waterdolphinkiller.github.io/data-workbench/json-path-tester/): Test RFC 9535 JSONPath expressions with filter predicates, slices, and recursive descent locally in your browser.
+
+## Engineering Guides
+- [How to Clean Messy CSV Files Locally Without Uploading Customer PII](https://waterdolphinkiller.github.io/data-workbench/guides/clean-messy-csv-without-uploading/): A practical playbook for detecting delimiters, fixing mixed dates, clustering dirty text values, masking PII, and automating monthly CSV cleanups locally.
+- [How to Compare Two CSV Files by Primary Key (Without Excel VLOOKUP Nightmares)](https://waterdolphinkiller.github.io/data-workbench/guides/compare-two-csv-files-by-primary-key/): Learn why line-by-line text diffs fail on tabular data and how primary-key / composite-key CSV diffing classifies added, removed, and cell-level changes.
+- [Building Deterministic, PII-Safe Local Data Workflows for AI Agents via MCP & OpenAPI](https://waterdolphinkiller.github.io/data-workbench/guides/local-mcp-data-workflows/): Why AI agents should never rewrite raw CSV files directly—and how to connect Claude, Gemini, or Cursor to Data Workbench via 10 sandboxed MCP tools or local OpenAPI 3.1.

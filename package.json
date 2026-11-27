@@ -1,0 +1,52 @@
+{
+  "name": "data-workbench",
+  "version": "2.4.0",
+  "description": "Local-first Visual Data Transformation & Automation Studio \u2014 Columnar CoW Engine, Multi-Port DAG, Web Worker Studio, CLI & MCP Server.",
+  "type": "module",
+  "license": "MIT",
+  "author": "waterdolphinkiller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waterdolphinkiller/data-workbench.git"
+  },
+  "homepage": "https://waterdolphinkiller.github.io/data-workbench/",
+  "keywords": [
+    "data-workbench",
+    "local-first",
+    "columnar-engine",
+    "csv-cleaner",
+    "json-diff",
+    "data-workflow",
+    "etl",
+    "data-quality",
+    "schema-validation",
+    "pii-masking",
+    "mcp-server",
+    "cli"
+  ],
+  "bin": {
+    "dw": "./apps/cli/bin/dw.js",
+    "data-workbench": "./apps/cli/bin/dw.js",
+    "data-workbench-mcp": "./apps/mcp-server/src/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "bench": "node tests/benchmark.js",
+    "cli": "node apps/cli/bin/dw.js",
+    "mcp": "node apps/mcp-server/src/server.js",
+    "build:web": "node scripts/build-web.js",
+    "api": "node apps/api/server.js"
+  },
+  "files": [
+    "apps/",
+    "packages/",
+    "examples/",
+    "scripts/",
+    "assets/",
+    "README.md",
+    "LICENSE"
+  ]
+}

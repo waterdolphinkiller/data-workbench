@@ -1,0 +1,12 @@
+customer_id,full_name,email,phone,signup_date,plan,monthly_spend,status
+1001,  Alice Johnson ,ALICE@EXAMPLE.COM,+1-415-555-0101,2026-01-02,Pro,49.00,active
+1002,Bob Smith,bob.smith@example.com,+1-415-555-0102,02/03/2026,Starter,19.00,active
+1003,Carol Lin,CAROL.LIN@ACME.IO,+1-212-555-0199,2026-01-15,Enterprise,299.00,active
+1002,Bob Smith,bob.smith@example.com,+1-415-555-0102,2026-02-03,Starter,19.00,active
+1004,David Park,david.park@example.com,+1-650-555-0144,14/02/2026,Pro,49.00,churned
+1005,Eva Martinez,eva@startup.dev,N/A,2026-02-20,Starter,19.00,active
+1006,Frank Wu,FRANK@CORP.CO,+1-312-555-0188,not-a-date,Pro,49.00,paused
+1007,Grace Hopper,grace@navy.mil,+1-202-555-0177,2026-03-01,Enterprise,299.00,active
+1008,=HYPERLINK("http://evil.invalid"),henry@example.com,+1-512-555-0133,2026-03-05,Starter,19.00,active
+1009,  Iris Chen  ,iris.chen@example.com,+1-408-555-0122,03/10/2026,Pro,49.00,active
+1003,Carol Lin,carol.lin@acme.io,+1-212-555-0199,2026-01-15,Enterprise,299.00,active

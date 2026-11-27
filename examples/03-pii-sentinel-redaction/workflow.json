@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "workflow": {
+    "id": "pii-sentinel-redaction",
+    "name": "PII Sentinel Local Redaction Pipeline",
+    "engineVersion": "2.0.0",
+    "nodes": [
+      { "id": "input-1", "type": "source.csv", "version": "1.0.0", "params": { "header": true, "delimiter": "auto" } },
+      { "id": "mask-email", "type": "clean.piiMask", "version": "1.0.0", "params": { "columns": ["email"], "strategy": "mask" } },
+      { "id": "hash-phone", "type": "clean.piiMask", "version": "1.0.0", "params": { "columns": ["phone"], "strategy": "hash" } },
+      { "id": "output-1", "type": "output.csv", "version": "1.0.0", "params": { "formulaGuard": true } }
+    ],
+    "edges": [
+      { "from": "input-1", "to": "mask-email" },
+      { "from": "mask-email", "to": "hash-phone" },
+      { "from": "hash-phone", "to": "output-1" }
+    ]
+  }
+}

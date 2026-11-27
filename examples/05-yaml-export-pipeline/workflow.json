@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "workflow": {
+    "id": "yaml-config-to-json",
+    "name": "YAML / JSON Conversion & Sorting",
+    "engineVersion": "2.0.0",
+    "nodes": [
+      { "id": "input-1", "type": "source.csv", "version": "1.0.0", "params": { "header": true, "delimiter": "auto" } },
+      { "id": "sort-1", "type": "transform.sort", "version": "1.0.0", "params": { "column": "monthly_spend", "direction": "desc" } },
+      { "id": "output-1", "type": "output.yaml", "version": "1.0.0", "params": {} }
+    ],
+    "edges": [
+      { "from": "input-1", "to": "sort-1" },
+      { "from": "sort-1", "to": "output-1" }
+    ]
+  }
+}

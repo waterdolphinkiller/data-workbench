@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "workflow": {
+    "id": "api-json-flatten-schema",
+    "name": "API Response JSON Flatten & Schema Check",
+    "engineVersion": "2.0.0",
+    "nodes": [
+      { "id": "input-1", "type": "source.json", "version": "1.0.0", "params": { "flatten": true, "separator": "." } },
+      { "id": "filter-paid", "type": "transform.filter", "version": "1.0.0", "params": { "column": "status", "operator": "eq", "value": "paid" } },
+      { "id": "schema-1", "type": "validate.jsonSchema", "version": "1.0.0", "params": {} },
+      { "id": "output-1", "type": "output.csv", "version": "1.0.0", "params": { "formulaGuard": true } }
+    ],
+    "edges": [
+      { "from": "input-1", "to": "filter-paid" },
+      { "from": "filter-paid", "to": "schema-1" },
+      { "from": "schema-1", "to": "output-1" }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run automated tests
+        run: npm test
+      - name: Build standalone Web Studio
+        run: npm run build:web
+      - name: Smoke-test CLI data contract validation
+        run: |
+          node apps/cli/bin/dw.js validate \
+            examples/01-messy-customers-cleanup/sample-input.csv \
+            --contract examples/01-messy-customers-cleanup/contract.json
+      - name: Smoke-test CLI regression suite
+        run: |
+          node apps/cli/bin/dw.js test \
+            examples/01-messy-customers-cleanup/workflow.json \
+            --input examples/01-messy-customers-cleanup/sample-input.csv \
+            --expectations examples/01-messy-customers-cleanup/expectations.json

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Workbench 2.0 — Local-First Visual Data Workflow Studio</title>
+  <meta name="description" content="Turn messy CSV and JSON files into reliable, repeatable, testable data workflows locally in your browser. Zero uploads, visual DAG canvas, Data Quality Radar, primary-key diff, Schema Guardian, and CLI.">
+  <link rel="canonical" href="https://waterdolphinkiller.github.io/data-workbench/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data Workbench 2.0 — Local-First Visual Data Workflow Studio">
+  <meta property="og:description" content="Clean CSVs, compare files by primary key, validate JSON Schemas, mask PII, and export repeatable workflows to CLI & CI — 100% locally.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Data Workbench 2.0",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web, Windows, macOS, Linux",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Local-first visual data transformation, quality auditing, primary-key diff, and workflow automation studio for CSV, JSON, NDJSON, YAML, and XML."
+  }
+  </script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell"></div>
+  <input id="file-upload-input" type="file" accept=".csv,.tsv,.xlsx,.json,.ndjson,.jsonl,.yaml,.yml,.xml,.txt" style="display:none">
+  <input id="workflow-import-input" type="file" accept=".json" style="display:none">
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

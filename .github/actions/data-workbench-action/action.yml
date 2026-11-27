@@ -1,0 +1,16 @@
+name: 'Data Workbench Validator'
+description: 'Validate CSV/JSON data contracts and run repeatable Data Workbench 2.0 workflows in GitHub Actions.'
+inputs:
+  command:
+    description: 'CLI subcommand to execute (validate | run | test | diff | schema)'
+    required: true
+    default: 'validate'
+  args:
+    description: 'Arguments passed to dw CLI'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Run Data Workbench CLI
+      shell: bash
+      run: node "${{ github.action_path }}/../../../apps/cli/bin/dw.js" ${{ inputs.command }} ${{ inputs.args }}

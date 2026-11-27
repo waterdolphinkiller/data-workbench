@@ -1,0 +1,13 @@
+{
+  "requiredColumns": ["customer_id", "full_name", "email", "signup_date", "plan", "status"],
+  "minRows": 1,
+  "maxRows": 1000000,
+  "maxNullRate": {
+    "customer_id": 0,
+    "email": 0.05
+  },
+  "columnTypes": {
+    "customer_id": "integer",
+    "email": "email"
+  }
+}
